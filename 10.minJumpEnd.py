@@ -3,16 +3,30 @@
 #User function Template for python3
 class Solution:
     def minJumps(self, arr, n):
-        res=0
-        l=r=0
-        while r < n-1:
-            far=0
-            for i in range(1,r+1):
-                far=max(far,i+arr[i])
-            l=r+1    
-            r=far
-            res+=1
-        return res    
+        count=0
+        i=1
+        jump=arr[0]
+        if arr[0]==0:
+            return -1
+        if arr[0]>n-1:
+            return 1
+        while i<n-1:
+            li=arr[i:i+jump]
+            print(li)
+            mx=max(li)
+            print(mx)
+            jump=mx
+            count+=1
+            if mx>=n:
+                count+=1
+                return count
+            # elif i+mx>=n:
+            #     count+=2
+            #     return count    
+        if count==0:
+            return -1
+        else:
+            return count
             
                 
     
