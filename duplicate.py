@@ -9,9 +9,10 @@ def duplicate(arr,n):
     # return ele
     ans=0
     for i in range(n):
-        ans= ans^arr[i]#same element ke sath XOR karne se 0 hota hai
+        ans= ans^arr[i]#same element ke sath XOR karne se 0 hota hai...dusre element ko 0 ke sath xor karne pe wohi element miljaygea
     for i in range(n):
-        ans= ans^i   
+        ans= ans^i 
+              #pheli baar xor isleye kiye hai kiyu ki baki elements 
     return ans 
 def main():
     n=int(input())
