@@ -1,8 +1,4 @@
-from sympy import N
-
-
-def sqrtN(n):
-
+def sqrtInteger(n):
     start=0
     end=n
     mid=start+(end-start)//2
@@ -14,11 +10,26 @@ def sqrtN(n):
         else:
             start=mid+1
         mid=start+(end-start)//2
-    return mid              
+    return mid    
+
+
+def accurateRoot(n,precision,tempResult):
+    factor=1
+    ans=tempResult
+    for i in range(precision):
+        factor=factor/10
+        j=ans
+        while(j*j<n):
+            ans=j
+            j=j+factor
+            print(j)
+    return ans        
+
 
 def main():      
-    n = int(input())
-    result = sqrtN(n)
+    n, precision = map(int,input().split())
+    tempResult = sqrtInteger(n)
+    result=accurateRoot(n,precision,tempResult)
     print(result)  
 
 
