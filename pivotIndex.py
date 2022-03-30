@@ -12,7 +12,7 @@ def getPivot(arr,n):
 
 
 def main():
-    n,k=map(int,input().split())
+    n= int(input())
     arr=list(map(int,input().split())) 
     res=getPivot(arr, n)
     print(res)
